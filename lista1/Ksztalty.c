@@ -1,28 +1,21 @@
 #include<stdlib.h>
+#include<stdio.h>
 #include<math.h>
 #include "Ksztalty.h"
 
 #define PI 3.14159265
 
-enum typfig {Trojkat, Kolo, Kwadrat};
-
-struct Figura
+void wypiszInfo(figura* fig)
 {
-    float x;
-    float y;
-    float size;
-    typfig typ;
-
-};
-
-
+    printf("x: %f, y: %f, size: %f\n", fig->x,fig->y, fig->size);
+}
 //Dodanie trapezu zmusza do utworzenia osobnej funkcji tworzenia obiektu trapezu
 figura* nowy_kwadrat(float _x, float _y, float _size)
 {
     if(_size <= 0)
     {
-        printf("Kwadrat z ujemnym bokiem!");
-        return NULL;
+        printf("Kwadrat z ujemnym bokiem! Ustawiono wielkość na domyślną: 1\n");
+        _size = 1;
     }
     figura* new = malloc(sizeof(figura));
     new->size = _size;
@@ -36,8 +29,8 @@ figura* nowy_trojkat(float _x, float _y, float _size)
 {
     if(_size <= 0)
     {
-        printf("Trojkat o ujemnym boku!");
-        return NULL;
+        printf("Trojkat o ujemnym boku!  Ustawiono wielkość na domyślną: 1\n");
+        _size = 1;
     }
     figura* new = malloc(sizeof(figura));
     new->size = _size;
@@ -51,8 +44,8 @@ figura* nowe_kolo(float _x, float _y, float _size)
 {
     if(_size <= 0)
     {
-        printf("Kolor z ujemnym promieniem!");
-        return NULL;
+        printf("Kolor z ujemnym promieniem!  Ustawiono wielkość na domyślną: 1\n");
+        _size = 1;
     }
     figura* new = malloc(sizeof(figura));
     new->size = _size;
@@ -79,6 +72,12 @@ float pole(figura* fig) //Dodanie trapezu zmusza do dodania tutaj 1 przypadku
         break;
     }
     return pole;
+}
+
+void przesun(figura* fig, float x, float y)
+{
+    fig->x += x;
+    fig->y += y;
 }
 
 float sumapol(figura* figs, int size)

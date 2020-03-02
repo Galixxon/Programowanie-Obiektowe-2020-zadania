@@ -86,6 +86,9 @@ Ulamek* podziel(Ulamek* u1, Ulamek* u2)
     u2->licznik = u2->mianownik;
     u2->mianownik = temp;
     nowy = pomnoz(u1,u2);
+    temp = u2->licznik;
+    u2->licznik = u2->mianownik;
+    u2->mianownik = temp;
     return nowy;
 }
 
