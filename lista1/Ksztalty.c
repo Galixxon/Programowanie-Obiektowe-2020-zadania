@@ -7,7 +7,7 @@
 
 void wypiszInfo(figura* fig)
 {
-    printf("x: %f, y: %f, size: %f\n", fig->x,fig->y, fig->size);
+    printf("x: %.2f, y: %.2f, size: %.2f\n", fig->x,fig->y, fig->size);
 }
 //Dodanie trapezu zmusza do utworzenia osobnej funkcji tworzenia obiektu trapezu
 figura* nowy_kwadrat(float _x, float _y, float _size)

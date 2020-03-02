@@ -17,4 +17,6 @@ figura* nowy_trojkat(float _x, float _y, float _size);
 figura* nowe_kolo(float _x, float _y, float _size);
 float pole(figura* fig);
 float sumapol(figura* figs, int size);
+void wypiszInfo(figura* fig);
+void przesun(figura* fig, float x, float y);
 #endif

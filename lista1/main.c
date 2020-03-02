@@ -53,8 +53,19 @@ void przykladKsztalty()
     figury[0] = *(nowy_kwadrat(3.0,2.0,3.0));
     figury[1] = *(nowe_kolo(3.0,2.0,4.0));
     figury[2] = *(nowy_trojkat(3.0,2.0,5.0));
-    printf("Pole jednej figury: %f\n", pole(&figury[2]));
-    printf("Pole wszystkich figur: %f\n", sumapol(figury,3));
+    printf("kwadrat: ");
+    wypiszInfo(&figury[0]);
+    printf("kolo: ");
+    wypiszInfo(&figury[1]);
+    printf("trojkat: ");
+    wypiszInfo(&figury[2]);
+    przesun(&figury[1], 3.0, 4.3);
+    printf("Przesuniete kolo: ");
+    wypiszInfo(&figury[1]);
+    
+    printf("Pole jednej figury: %.2f\n", pole(&figury[0]));
+    printf("Pole wszystkich figur: %.2f\n", sumapol(figury,3));
+
     
 }
 
